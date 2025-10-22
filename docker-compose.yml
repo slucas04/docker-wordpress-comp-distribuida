@@ -69,6 +69,16 @@ services:
       - wordpress3
     restart: unless-stopped
 
+  locust:
+    image: locustio/locust:2.23.0
+    container_name: locust
+    volumes:
+      - ./locust:/locust   
+    ports:
+      - "8089:8089"            
+
+
+
 volumes:
   db_data:
   wp_data:
