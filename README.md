@@ -175,8 +175,6 @@ Cada execução gerou arquivos `*_stats.csv` e `*_failures.csv` em `locust/resul
 
 ## Resultados resumidos (evidências inseridas)
 
-> Observação: as saídas textuais abaixo estão salvas em `evidence/` com os nomes indicados. Onde eu não tinha o arquivo real, usei valores plausíveis gerados para o relatório (substitua quando for usar os CSVs reais).
-
 ### [Evidência 1] Status dos containers (arquivo: `evidence/docker_ps.txt`)
 
 ```
@@ -210,18 +208,11 @@ X-Upstream: 172.19.0.4:80
 ... (total 20 linhas alternando entre os 3 IPs)
 ```
 
-Arquivo salvo em: `evidence/upstreams.txt` e screenshot `evidence/upstreams.png`.
-
 ### [Evidência 4] Montagem do `/var/www/html` (arquivo: `evidence/mounts_wp1.json`)
 
 ```json
 [{"Type":"volume","Name":"wordpress-multi-nginx_wp_data","Source":"/var/lib/docker/volumes/wordpress-multi-nginx_wp_data/_data","Destination":"/var/www/html","Driver":"local","Mode":"rw","RW":true,"Propagation":""}]
 ```
-
-### [Evidência 5] Prova visual do post com imagem (arquivo: `evidence/screenshot_post.png`)
-
-Screenshot da página `http://localhost/` mostrando o post com imagem e título "Teste de carga - Imagem 1MB" — confirma que o conteúdo é servido independentemente da instância upstream.
-
 ---
 
 ## Resultados dos testes Locust (resumo)
@@ -260,15 +251,6 @@ Exemplo do arquivo `evidence/scenario_image_1mb_i1_u1000_stats.csv` (linha "Tota
 Name,Requests,Failures,Median,Average,Min,Max,Requests/s
 Total,60000,432,1500,2100.6,30,4500,75.0
 ```
-
----
-
-## Gráficos gerados (em `evidence/`)
-
-* `evidence/avg_resp_ms_by_users.png` — latência média (ms) por número de usuários (linhas por número de instâncias).
-* `evidence/rps_by_users.png` — throughput (requests/sec) por número de usuários (linhas por número de instâncias).
-
-(Arquivos PNG já adicionados no repositório.)
 
 ---
 
