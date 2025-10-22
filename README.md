@@ -130,7 +130,9 @@ X-Upstream: 172.19.0.3:80
 * Named volumes são mais práticos no Windows; para usar bind-mount (`./wp_shared`) sem problemas prefira rodar no WSL2.
 * O `X-Upstream` é um *response header* HTTP; o HTML é o *body*. Inclua ambos (texto `upstreams.txt` + screenshot do site) caso o professor peça header e conteúdo.
 
-# Trabalho 3 — Testes de Carga com Locust (continuação do Trabalho 2)
+---
+
+# Trabalho 3 — Testes de Carga com Locust
 
 ## Resumo
 
